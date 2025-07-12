@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏏 Live Cricket App - Frontend
 
-## Getting Started
+A real-time cricket score and commentary web application frontend built with **Next.js**, **TypeScript**, and **Tailwind CSS** (if you're using it — adjust if not).  
+This connects to the backend server to display ongoing matches, detailed commentary, and match updates.
 
-First, run the development server:
+---
+
+## 📦 Tech Stack
+
+- **Next.js (App Router)**
+- **React.js**
+- **TypeScript**
+- **Fetch API**
+- **CSS/Tailwind CSS** (if applicable)
+
+---
+
+## 🚀 Getting Started
+
+### 1️⃣ Clone the Repository
 
 ```bash
+git clone https://github.com/prakhar1210/liveCricketApp.git
+cd liveCricketApp/frontend/my-app
+
+npm install
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+📂 Project Structure (App Directory)
+src/
+ └── app/
+      ├── page.tsx            // Homepage showing match list
+      └── match/
+           └── [matchid]/
+               └── page.tsx   // Commentary page for individual matches
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+📝 Features
+📜 List ongoing cricket matches
 
-## Learn More
+📝 View live commentary for each match
 
-To learn more about Next.js, take a look at the following resources:
+🚀 Next.js App Router dynamic routing
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+🔥 Clean and responsive UI
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+🌐 API Endpoints (used by frontend)
+GET http://localhost:5000/matches → Fetch list of matches
 
-## Deploy on Vercel
+GET http://localhost:5000/matches/:matchId → Fetch match details & commentary
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+⚠️ Backend must be running for the frontend to function
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+🛠️ Development Notes
+Ensure CORS is enabled on the backend (Access-Control-Allow-Origin: *)
+
+Matches are identified via matchId as dynamic route parameters in URL
+
+Code uses Next.js' useParams() for accessing route params and fetch() for data fetching
+
+📃 License
+MIT © 2025 Prakhar Shrivastava
